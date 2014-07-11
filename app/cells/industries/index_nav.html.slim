@@ -1,0 +1,35 @@
+ul.nav.nav-tabs
+  li
+    a href="#{posts_industry_path}" 热门信息
+  - industries.limit(9).each do |item|
+      li class="#{item.name.eql?(@industry.name) ? 'active' : ''}"
+        a href="#{posts_industry_path(item)}"  = item.name
+  - unless industries.limit(9).include?(@industry)
+    li.more_nav.active
+      .more_nav_content
+        .nav
+          i.icon-angle-up.pull-right
+          ul
+            - industries.offset(9).each do |item|
+              li
+                a href="#{posts_industry_path(item)}"  = item.name
+      a.more_nav href="javascript:void(0)"
+        i.icon-caret-down
+        span &nbsp;
+        span = @industry.name
+  - else 
+    li.more_nav
+      .more_nav_content
+        .nav
+          i.icon-angle-up.pull-right
+          ul
+            - industries.offset(9).each do |item|
+              li
+                a href="#{posts_industry_path(item)}"  = item.name
+      a.more_nav href="javascript:void(0)"
+        i.icon-caret-down
+        span &nbsp;更多行业
+
+
+
+

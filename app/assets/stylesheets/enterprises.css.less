@@ -1,0 +1,134 @@
+@import "mes_common_style";
+@import "enterprise_common_style";
+
+// enterprise index UI
+.enterprise-index-screen{
+    img{
+	display:block;
+	margin: 0 auto;
+	max-height: 270px;
+    }
+}
+.enterprise-index{
+    .index-title{
+	.page-title();
+    }
+    .wide{
+	.middle-media-list();
+	ul li.media {margin-bottom: 0px;}
+	ul .divide-bottom{
+	    padding: 0 0 50px 0;
+	    background: #fff;
+	    background: -moz-radial-gradient(center top, ellipse cover, #efefef 0%, #fff 60%);
+	    background: -webkit-gradient(radial, center top, 0px, center top, 60%, color-stop(0%, #efefef), color-stop(60%, #fff));
+	    background: -webkit-radial-gradient(center top, ellipse cover, #efefef 0%, #fff 60%);
+	    background: -o-radial-gradient(center top, ellipse cover, #efefef 0%, #fff 60%);
+	    background: -ms-radial-gradient(center top, ellipse cover, #efefef 0%, #fff 60%);
+	    background: radial-gradient(ellipse at center top, #efefef 0%,#ffffff 60%);
+	    .divide-inner{
+		height: 1px;
+		background: #fff;
+		background: -moz-linear-gradient(left, #fff 0%, #efefef 30%, #efefef 70%, #fff 100%);
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(10%, #fff), color-stop(30%, #efefef), color-stop(70%, #efefef), color-stop(90%, #fff), color-stop(100%, #fff));
+		background: -webkit-linear-gradient(left, #fff 0%, #efefef 30%, #efefef 70%, #fff 100%);
+		background: -o-linear-gradient(left, #fff 0%, #efefef 30%, #efefef 70%, #fff 100%);
+		background: -ms-linear-gradient(left, #fff 0%, #efefef 30%, #efefef 70%, #fff 100%);
+		background: linear-gradient(to right, #ffffff 0%,#efefef 30%,#efefef 70%,#ffffff 100%);
+	    }
+
+	}
+    }
+    .narrow{
+	.lastest-enterprise{
+	    .lastest-enterprise();
+	}
+    }
+}
+//域名查询
+.domain_query{
+    .domain-query();
+}
+
+.enterprise-show{
+    .show-content{
+	.screen{
+	    padding-bottom: 30px;
+	    width: 100%;
+	    min-height: 340px;
+	    img{
+		display: block;
+		margin: 0 auto;
+	    }
+	}
+	.screen-shadow{
+	    background: url("/assets/desktop-shadow-full.png") no-repeat;
+	    height: 30px;
+	    
+	}
+	.enterprise-infor{
+	    margin: 0 auto;
+	    padding: 0 15% 60px 15%;
+	    background: url(/assets/dashed-bg.png) repeat-x left bottom;
+	}
+	.live-a-message{
+	    min-height: 500px;
+	    .title{margin:-30px 0 60px 60px;}
+	}
+    }
+    .narrow{
+    }
+}
+
+.switch-tab{
+    
+    ul li{
+	a{display: block;
+	  padding: 15px 0 15px 30px;}
+	background-position: -120px 0px;
+	margin: 12px 0px;
+	background: url('/assets/show_enterprise_switch_tab_bg.jpg');
+	background-position: -120px 0;
+	cursor: pointer;
+	a i{font-size: 16px;}
+    }
+    ul li.active,ul li:hover{
+	background: -webkit-gradient(linear, 0 0, 100% 100%, from(#005fac), to(#fff)) !important;
+	a:hover{text-decoration: none;}
+	a i{color:#fff;}
+    }
+}
+
+.lastest-enterprise{
+    .lastest-enterprise();
+}
+
+.search-enterprises{
+    .enterprises-title{
+	.page-title();
+	form{
+	    float: right;
+	    margin: -40px 0 0 0;
+	}
+    }
+    .wide.enterprises-content{
+	height:20px;
+    	.middle-media-list();
+    }
+    .narrow{
+	.domain_query{
+	    .domain-query();
+	}
+	.lastest-enterprise{
+	    .lastest-enterprise();
+	}
+    }
+}
+
+.source-wirte{
+    #enterprise_description{
+	width: 91%;
+	height: 58px;
+	margin-top: 10px;
+	resize: none;
+    }
+}

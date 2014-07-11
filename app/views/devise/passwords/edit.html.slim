@@ -1,0 +1,22 @@
+.devise-layout
+  .page
+    .header.clearfix
+      p.pull-left 重置密码
+      a.pull-right href="#{user_session_path}" 已有帐号？
+    hr
+    .body.clearfix
+      .colum
+        .page-intro 
+          p 中小型微企业信息服务平台，企业信息服务最佳选择
+          p 请输入你的注册电子邮箱。你将收到一封确认邮件，可以重新设置密码。
+          p 如果没有即使收到邮箱，可以检验一下垃圾邮箱，为方便即使通信，请设置该站点为可信任邮箱
+      .colum  
+        = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+          = f.error_notification 
+          = f.input :reset_password_token, :as => :hidden
+          = f.full_error :reset_password_token
+          .form-inputs
+            = f.input :password, :label => false, :required => true, :autofocus => true
+            = f.input :password_confirmation, :label => false, :required => true
+          = f.button :submit, "完成修改密码", :class => "pull-right"     
+  .page-shadow

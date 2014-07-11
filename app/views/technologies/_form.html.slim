@@ -1,0 +1,17 @@
+= simple_form_for @technology, html: { class: 'form-horizontal'}  do |f|
+  .form-left
+    = f.input :name, input_html: { maxlength: 10 }
+    = f.input :address
+    = f.input :phone, input_html: { maxlength: 15 }, :as => :integer
+    = f.input :url, :as => :url
+    = f.input :email, :as => :email
+  .form-right
+    = f.input :avatar, :as => :file
+    a.btn href="#" 
+      i.icon-cloud-upload 
+      span = t('controller.enterprise.create.avater_lable')
+    img.review src="#{@technology.avatar.url}" alt="#{t('controller.enterprise.create.avater_lable')}"
+  .clearfix
+  = f.input :introduction, :as => :text, input_html: { maxlength: 100 }
+  = f.input :services, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'}}
+  = f.button :submit

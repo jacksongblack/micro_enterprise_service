@@ -1,0 +1,13 @@
+.pblock.technology-show
+  .wide.show-content
+    .screen
+      img src="#{@technology.avatar.url}"
+    .screen-shadow
+    .service
+      h4.title.strong 科技服务：
+      p = raw @technology.services  
+    .ad
+      img src="/assets/ad.jpg"
+  .narrow
+    = render "technologies/slide/technology_infor"
+    = render "technologies/slide/lastest_technology"

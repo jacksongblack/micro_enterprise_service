@@ -1,0 +1,13 @@
+.pblock.source-wirte
+  .page-head
+    .bread-nav
+      = simple_breadcrumbs "企业黄页",enterprises_path, "创建企业" 
+      h5 创建企业
+  .page-body
+    .narrow
+      ul
+        = render "users/user_operate"
+    .wide
+      .content
+        = render "enterprises/form"
+

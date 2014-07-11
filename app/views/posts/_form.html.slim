@@ -1,0 +1,18 @@
+= simple_form_for @post, html: { class: 'form-horizontal', onsubmit: "return post_domain_id_and_industry_id_validate()"}  do |f|
+  .form-left  
+    = f.association :domain, include_blank: t('simple_form.prompt.post.new.domain')
+    = f.association :industry, include_blank: t('simple_form.prompt.post.new.industry')
+  .form-right
+    p 
+      abbr.required
+        font color="red"* 
+        | 所属类别和所属行业必须至少选一个,可多选
+  .clearfix
+  = f.input :title, input_html: { maxlength: 50 } 
+  = f.input :description, :as => :text, input_html: { pattern: ".{100,250}", maxlength: 250 }
+  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'}}
+  = f.input :from, input_html: { maxlength: 15 }
+  = f.input :tag_list
+  = f.input :logo, :as => :hidden, input_html: { value: t('logo_url') }
+  = f.button :submit
+  

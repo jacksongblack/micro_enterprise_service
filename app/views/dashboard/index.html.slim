@@ -1,0 +1,80 @@
+.pblock.dashbord-index
+  .field.clearfix
+    .l.narrow
+      .block-domains-focus
+        = render "dashboard/part/block_title", :title_name => "新闻资讯"
+        = render "dashboard/part/block_domains_focus_body"
+      .block-domains
+        = render "dashboard/part/block_title", :title_name => "新闻看点"
+        = render "dashboard/part/block_domains_body"
+      .block-now
+        = render "dashboard/part/block_title", :title_name => "正在发生"
+        = render "dashboard/part/block_now_body"
+    .m.narrow
+      .block-today-hotting
+        = render "dashboard/part/block_title", :title_name => "今日热点"
+        = render "dashboard/part/block_today_hotting_body"
+    .r.narrow
+      .block-site-module
+        = render "products/index_part/recommend_products", :products => recommend_products(3)
+        /= render "dashboard/part/block_title", :title_name => "快捷浏览"
+        /= render "dashboard/part/block_site_module_body"
+      .block-hot-domain_posts
+        = render "domains/posts/hot_domain_posts"
+      .block-ads-list
+        img src="assets/dashboard_ad_weiqiye.jpg"
+        img src="assets/dashboard_ads-1.jpg"
+  .field.clearfix
+    .l.narrow
+      .block-industries-focus
+        = render "dashboard/part/block_title", :title_name => "行业资讯"
+        = render "dashboard/part/block_industries_focus_body"
+      .block-industries-recommend-posts
+        = render "dashboard/part/block_title", :title_name => "行业推荐"
+        = render "dashboard/part/block_industries_recommend_posts_body"
+    .m.narrow
+      .block-industry-hotting-posts
+        = render "dashboard/part/block_title", :title_name => "行业热点"
+        = render "dashboard/part/block_industry_hotting_posts_body"
+      .block-lastest-industry-posts
+        = render "dashboard/part/block_title", :title_name => "最新行业动态"
+        = render "dashboard/part/block_lastest_industry_posts_body"
+      .block-ads-list
+        img src="assets/dashboard_ad_weiqiye.jpg"
+    .r.narrow
+      .block-industries
+        = render "dashboard/part/block_title", :title_name => "热门行业"
+        = render "dashboard/part/block_industries_body"
+      .block-hot-domain_posts
+        = render "industries/posts/hot_industry_posts"
+      .block-technology-service
+        = render "dashboard/part/block_title", :title_name => "科技服务机构"
+        = render "dashboard/part/block_technology_service_body"
+      .block-tools-express
+        = render "dashboard/part/block_title", :title_name => "快递查询"
+        = render "dashboard/part/block_tools_express_body"
+      .block-tools-patent
+        = render "dashboard/part/block_title", :title_name => "专利查询"
+        = render "dashboard/part/block_tools_patent_body"
+  .wide
+    = render "dashboard/part/block_title", :title_name => "热卖产品"
+    = render "products/index_part/hotting_products", :products => best_seller_products.limit(3)
+  .narrow
+    = render "products/index_part/you_maybe_like", :products => recommend_you_like(3)
+  .clearfix
+  = render "products/index_part/lastest_products", :products => latest_products.limit(8)
+  .field.clearfix
+    .l.narrow
+      .block-hotting-enterprises
+        = render "dashboard/part/block_title", :title_name => "热门企业"
+        = render "dashboard/part/block_hotting_enterprises_body"
+    .m.narrow
+      .block-lastest-enterprises
+        = render "dashboard/part/block_title", :title_name => "新入住企业"
+        = render "dashboard/part/block_lastest_enterprises_body"
+    .r.narrow
+      .block-ads-list
+        img src="assets/dashboard_ad_weiqiye.jpg"
+        img src="assets/dashboard_ads-1.jpg"
+        img src="assets/dashboard_ads-2.jpg"
+

@@ -1,0 +1,13 @@
+.pblock.source-wirte
+  .page-head
+    .bread-nav
+      = simple_breadcrumbs "产品市场", products_path, "发布产品"
+      h5 发布产品
+  .page-body
+    .narrow
+      ul
+        = render "users/user_operate"
+    .wide
+      .content
+        = render "products/form"
+

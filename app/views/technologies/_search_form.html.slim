@@ -1,0 +1,6 @@
+= form_tag search_technologies_path, :method => :post do
+  = hidden_field_tag :source,controller_name
+  .input-append
+    input.span4 id="appendedInputButton" type="text" placeholder="输入关键字查询..." name="search" value="#{params[:search]}" required="required"
+    button.btn
+      i.icon-search &nbsp;一键搜索

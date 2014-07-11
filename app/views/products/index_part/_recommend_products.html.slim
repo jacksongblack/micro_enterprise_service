@@ -1,0 +1,23 @@
+.recommend_products
+  .blue-title
+    .title
+      h4 个性推荐
+      span.pull-left
+  ul.media-list
+    - products.each do|item|
+      li.media
+        a.pull-left href="#{product_path(item)}"
+          img.media-object  src="#{item.avatar.url}"
+        .media-body
+          h5.media-heading
+            a href="#{product_path(item)}"
+              = item.name
+          span.red 
+            span ￥
+            span = item.price
+            span &nbsp;元
+          br
+          span 
+            span 来自：
+            span 
+              a href="#{enterprise_path(item.enterprise)}" title="#{item.enterprise.name}" = item.enterprise.name

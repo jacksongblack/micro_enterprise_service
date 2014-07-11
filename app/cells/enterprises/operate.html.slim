@@ -1,0 +1,7 @@
+.post-operate.clearfix
+  .pull-right
+    a href="javascript:void(0)" onclick="delete_item(this,'该企业下的所有产品都会被删除')" title="删除该企业" data-method="delete" ref="#{enterprise_path  (@enterprise)}"
+      i.icon-remove &nbsp;&nbsp;删除
+    span style="color: #ccc;" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    = link_to raw('<i class="icon-edit">&nbsp;编辑</i>'), edit_enterprise_path(@enterprise)
+

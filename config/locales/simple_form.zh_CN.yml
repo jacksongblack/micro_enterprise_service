@@ -1,0 +1,228 @@
+# -*- coding: utf-8 -*-
+zh_CN:
+  simple_form:
+    required:
+      text: 'required'
+      mark: '*'
+      html: '<abbr title="required"><font color="red">*</font></abbr>'
+    error_notification:
+      default_message: "请查看下面详细的错误提示:"
+    labels:
+      rss:
+        domains:
+          sitename: '站点名称'
+          url: 'RSS地址'
+          domain: '所属类别'
+          industry: '所属行业'
+        industries:
+          sitename: '站点名称'
+          url: 'RSS地址'
+          domain: '所属类别'
+          industry: '所属行业'
+      domain:
+        index:
+          name: "导航名称"
+      industry:
+        index:
+          name: "行业名称"
+      post:
+        new:
+          title: '新闻标题'
+          description: '新闻摘要'
+          domain: '所属类别'
+          tag_list: '新闻标签'
+          industry: '所属行业'
+          content: '新闻内容'
+          from: '新闻来源'
+        edit:
+          title: '新闻标题'
+          description: '新闻摘要'
+          domain: '所属类别'
+          tag_list: '新闻标签'
+          industry: '所属行业'
+          content: '新闻内容'
+          from: '新闻来源'
+      user:
+        new:
+          email: '电子邮箱'
+          password: '密码'
+          password_confirmation: "再次输入密码"
+          current_password: "当前密码"
+        edit:
+          email: '邮箱'
+          password: '密码'
+          password_confirmation: "再次输入密码"
+          current_password: "当前密码"
+      product:
+        new:
+          name: '产品名称'
+          description: '产品详情(暂时不支持视频，Flash)'
+          industry: '所属行业'
+          enterprise: '所属企业'
+          price:  '产品价格'
+          avatar: '产品照片'
+        edit:
+          name: '产品名称'
+          description: '产品详情（暂时不支持视频，Flash）'
+          industry: '所属行业'
+          enterprise: '所属企业'
+          price:  '产品价格'
+          avatar: '产品照片'
+      technology:
+        new:
+          name: '机构名称'
+          introduction: '机构简介'
+          address: '机构地址'
+          phone: '机构电话'
+          url: '机构网站'
+          email: '机构邮箱'
+          services: '科技服务'
+          avatar: '机构图片'
+        edit:
+          name: '机构名称'
+          introduction: '机构简介'
+          address: '机构地址'
+          phone: '机构电话'
+          url: '机构网站'
+          email: '机构邮箱'
+          services: '科技服务'
+          avatar: '机构图片'
+      enterprise:
+        new:
+          name: '企业名称'
+          description: '企业简介'
+          address: '企业地址'
+          phone: '企业电话'
+          url: '企业网站'
+          avatar: '企业形象照'
+          email: '企业邮箱'
+          industry: '所属行业'
+        edit:
+          name: '企业名称'
+          description: '企业简介'
+          address: '企业地址'
+          phone: '企业电话'
+          avatar: '企业形象照'
+          url: '企业网站'
+          email: '企业邮箱'
+          industry: '所属行业'
+    placeholders:
+      domain:
+        name: "请输入导航名称(< 5字)"
+      industry:
+        name: "请输入行业名称(< 5字)"
+      rss:
+        sitename: '请输入站点名称(<10字)'
+        url: '请输入RSS地址'
+        domain: '请选择所属类别'
+        industry: '请选择所属行业'
+      user:
+        email: '请输入邮箱'
+        password: '请输入密码(>=8字)'
+        current_password: "请输入当前密码"
+        password_confirmation: "请再次输入密码"
+      post: 
+       new:
+         title: '新闻标题(小于50字)'
+         description: '新闻摘要(10-250字)'
+         domain: '所属类别'
+         tag_list: '新闻标签(中文或英文逗号隔开)'
+         industry: '所属行业'
+         content: '新闻内容'
+         from: '请输入新闻来源(小于15字)'
+       edit:
+         title: '新闻标题(小于50字)'
+         description: '新闻摘要(100-250字)'
+         domain: '所属类别'
+         tag_list: '新闻标签(中文或英文逗号隔开)'
+         industry: '所属行业'
+         content: '新闻内容'
+         from: '请输入新闻来源(小于15字)'
+      enterprise:
+        new:
+          name: '请输入企业名称(< 15字)'
+          description: '请输入企业简介(< 100字)'
+          address: '请输入企业地址'
+          phone: '请输入企业电话'
+          url: '请输入企业网站'
+          email: '请输入企业邮箱'
+          industry: '请选择所属行业'
+        edit:
+          name: '请输入企业名称(< 15字)'
+          description: '请输入企业简介(< 100字)'
+          address: '请输入企业地址'
+          phone: '请输入企业电话'
+          url: '请输入企业网站'
+          email: '请输入企业邮箱'
+          industry: '请选择所属行业'
+      technology:
+        new:
+          name: '请输入科技服务机构名称(< 10字)'
+          introduction: '请输入技服务机构简介(< 100字)'
+          address: '请输入技服务机构地址'
+          phone: '请输入技服务机构电话'
+          url: '请输入技服务机构网站'
+          email: '请输入技服务机构邮箱'
+          services: '请介绍性填写技服务机构所提供的服务'
+        edit:
+          name: '请输入科技服务机构名称(< 10字)'
+          introduction: '请输入技服务机构简介(< 100字)'
+          address: '请输入技服务机构地址'
+          phone: '请输入技服务机构电话'
+          url: '请输入技服务机构网站'
+          email: '请输入技服务机构邮箱'
+          services: '请介绍性填写技服务机构所提供的服务'
+      product:
+        new:
+          name: '请输入产品名称(< 15字)'
+          description: '请填写产品详情（暂时不支持视频，Flash）'
+          industry: '请选择所属行业'
+          enterprise: '请选择所属企业'
+          price:  '请填写产品价格(正整数)'
+          avatar: '请上传产品照片'
+        edit:
+          name: '请输入产品名称(< 15字)'
+          description: '请填写产品详情（暂时不支持视频，Flash）'
+          industry: '请选择所属行业'
+          enterprise: '请选择所属企业'
+          price:  '请填写产品价格(正整数)'
+          avatar: '请上传产品照片'
+    prompt:
+      rss:
+        new:
+          industry: '请选择所属行业'
+          domain:   '请选择所属类别'       
+      enterprise: 
+        new:
+          industry: '请选择所属行业'
+      post: 
+        new:
+          industry: '请选择所属行业'
+          domain:   '请选择所属类别'
+      product: 
+        new:
+          industry: '请选择所属行业'
+          enterprise: '请选择所属企业'
+  helpers:
+    submit:
+      rss:
+        create: '创建RSS'
+        update: '更新RSS'
+      post:
+        create: "创建新闻"
+        update: "更新新闻"
+      technology:
+        create: "创建科服机构"
+        update: "更新科服机构"
+      enterprise:
+        create: "创建企业"
+        update: "更新企业"
+      product:
+        create: "创建产品"
+        update: "更新产品"
+      domain:
+        create: "创建导航"
+        update: "更新导航"
+      industry:
+        create: "创建行业"
+        update: "更新行业"

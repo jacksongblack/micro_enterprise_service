@@ -1,0 +1,6 @@
+= form_tag search_products_path, :method => :post ,:class=> "navbar-form"do
+  = hidden_field_tag :source,controller_name
+  .input-append
+    input.span2 id="appendedInputButton" type="text" placeholder="输入关键字查询..." name="search" value="#{params[:search]}" required="required"
+    button.btn
+      i.icon-search &nbsp;一键搜索

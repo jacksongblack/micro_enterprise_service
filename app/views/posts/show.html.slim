@@ -1,0 +1,60 @@
+.pblock.post-show
+  .wide.show-left
+    .bread-nav
+      = detail_breadcrumbs @post
+    .page-header
+      h3 = @post.title
+      = render_cell :posts, :infor, :post => @post, :format => "full"
+    .post-descripttion
+      p.lable.lable-info
+        span.title 摘要：
+        = @post.description
+    .post-content
+      article = raw @post.content
+    = render_cell :posts, :tags, :tags => @post.tag_list
+    /.post-link
+      p 
+        span.label.label-info 原文链接
+        span = post_link @post
+    .post-copyright
+      p.gray = t('controller.post.copy_right')
+    = render_cell :posts, :operate, :current_user => current_user, :post => @post
+    .post-friend-link.clearfix
+      .pull-right
+        span.gray 上一篇：&nbsp;
+        = render_cell :posts, :pre, :post_id => @post.id
+      .pull-left 
+        span.gray 下一篇：&nbsp;
+        = render_cell :posts, :next, :post_id => @post.id
+    p style="margin: 20px 0 0 90px;" 
+      strong.gray 企业信息
+    hr style="margin-top: 0;"
+    - if @post.user.enterprise.blank?
+      .well style="text-align: center;" 企业不存在，或被删除!
+    - else
+      .autor
+        .media
+          a.pull-left href="#"
+            img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="#{@post.user.enterprise.avatar.url}"
+          .media-body
+            span.gray 企业地址：
+            span = @post.user.enterprise.address
+            br
+            span.gray 企业主页：
+            span = @post.user.enterprise.url
+            br
+            span.gray 企业介绍：
+            span = @post.user.enterprise.description
+    .post-ads
+      .begin
+      img src="/assets/post_ad.jpg" 
+    .comment
+      .ds-thread data-thread-key="#{@post.id}" data-title="#{@post.title}" data-url="#{@post.url}"
+    .recommend
+      .ujian-hook
+      javascript:
+        var ujian_config = {num:8,showType:3}
+  .narrow
+    = render "domains/posts/guess_you_like_posts"
+    = render "domains/posts/lastest_domain_posts"
+

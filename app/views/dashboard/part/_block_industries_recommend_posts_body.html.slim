@@ -1,0 +1,5 @@
+ul.block-body.gray
+  - industries_recommend_posts(31).each do |item|
+    li
+      = link_to raw("[#{item.industry.name}]&nbsp;&nbsp;"+item.title),item
+.clearfix

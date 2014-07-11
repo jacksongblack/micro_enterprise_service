@@ -1,0 +1,24 @@
+= simple_form_for @product, html: { class: 'form-horizontal'}  do |f|
+  .form-left
+    = f.association :industry, prompt: t('simple_form.prompt.product.new.industry'), required: true
+    .control-group.string.required
+      label.string.required.control-label
+        abbr title="required"
+          font color="red" * 
+        | 所属企业
+      .controls
+        input.string.uneditable-input.required( required="required"  type="text" disabled value="#{current_user.enterprise.name}")
+    = f.input :enterprise_id, input_html: { value: current_user.enterprise.id },as: :hidden
+    = f.input :name, input_html: { maxlength: 15 }
+    = f.input :price, input_html: { maxlength: 8 }, :as => :integer
+  .form-right
+    = f.input :avatar, :as => :file
+    a.btn href="#" 
+      i.icon-cloud-upload 
+      span = t('controller.product.create.avater_lable')
+    img.review src="#{@product.avatar.url}" alt="#{t('controller.product.create.avater_lable')}"
+  hr
+  = f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'}}
+  .clearfix
+  = f.button :submit
+  

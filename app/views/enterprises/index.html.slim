@@ -1,0 +1,30 @@
+.pheader.enterprise-index-screen
+  img src="assets/enterprise_screen.jpg"
+.pblock.enterprise-index
+  .index-title 
+    .title
+      .input-prepend
+        span.add-on
+          i.icon-map-marker &nbsp;选择行业
+        = select("industry", "id", Industry.all.collect {|p| [ p.name, p.id ] }, {include_blank: '热门企业'})
+      span.pull_left
+      span.pull-right
+        = render "search_form"
+  .wide
+    ul.media-list
+      - @enterprises.each_with_index do|item,index|
+        li.media
+          a class="#{media_list_img_layout(index+1)}" href="#{enterprise_path(item)}"
+            img.media-object  src="#{item.avatar.url}"
+          .media-body
+            h2.media-heading
+              a href="#{enterprise_path(item)}"
+                = item.name
+            p.gray
+              = item.description
+        .divide-bottom
+          .divide-inner
+    .digg_pagination.clearfix
+        = will_paginate @enterprises, :container => false ,:next_label => "下一页",:previous_label => "上一页"
+  .narrow
+    = render "enterprises/slide/lastest_enterprise"

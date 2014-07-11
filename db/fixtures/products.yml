@@ -1,0 +1,8 @@
+<% (1..50).each do |n| %>
+<%= n%>:
+ id: <%= n%>
+ name: product<%= n%>
+ price: <%= n%>
+ industry_id: 1
+ description: <%= n%>is't product<%= n%>
+<% end %>

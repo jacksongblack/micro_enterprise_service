@@ -1,0 +1,41 @@
+.devise-layout
+  .page
+    .header.clearfix
+      p.pull-left 欢迎回来
+      a.pull-right href="#{new_user_registration_path}" 创建帐号？
+    hr
+    .body.clearfix
+      .colum
+        .page-intro 中小型微企业信息服务平台，企业信息服务最佳选择
+        .media
+          a.pull-left href="javascript:void(0)"
+            img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="/assets/news.png"
+          .media-body
+            p.media-heading.strong 最新新闻资讯
+            span 让你随时掌握最新科技，最新行业动态，与行业巨头零接触
+        .media
+          a.pull-left href="javascript:void(0)"
+            img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="/assets/product.png"
+          .media-body
+            p.media-heading.strong  丰富多彩实用的产品
+            span 这里是最权威，覆盖面最广的产品发布市场，不需走路，一键买到家
+        .media
+          a.pull-left href="javascript:void(0)"
+            img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="/assets/enterprise.png"
+          .media-body
+            p.media-heading.strong 企业资讯
+            span 不愁不知道我到底有多少竞争对手，他们的最新动态你可以随时掌握
+
+      .colum  
+        = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+          = f.input :email, :autofocus => true ,required: "required"
+          = f.input :password, required: "required"
+          = f.button :submit, "登录", class: 'pull-right' 
+          p.link 
+            = link_to "忘记密码?", "#{new_password_path(resource_name)}"
+      /.proxy-login
+        a.btn href="#" 
+          i.icon-pinterest &nbsp;新浪微薄
+        a.btn href="#"
+          i.icon-sign-blank &nbsp;QQ帐号登
+  .page-shadow

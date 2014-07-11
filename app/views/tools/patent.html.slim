@@ -1,0 +1,9 @@
+.pblock.tool
+  .bread-nav
+    = simple_breadcrumbs "查询工具",tools_express_path, "专利查询"
+    a href="#{tools_express_path}"
+      button.btn.btn-primary.pull-right.bread-nav-button 快递查询入口
+  .page-content
+    iframe.patent  name="search" src="http://publicquery.sipo.gov.cn/search/query.jsp" width="1040" height="800px" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"
+
+script changePatentFrametHeight();

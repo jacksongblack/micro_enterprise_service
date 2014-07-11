@@ -1,0 +1,12 @@
+.pblock.source-wirte
+  .page-head
+    .bread-nav
+      = simple_breadcrumbs "科技服务超市",technologies_path, "新建科技服务机构" 
+  .page-body
+    .narrow
+      ul
+        = render "users/user_operate"
+    .wide
+      .content
+        = render "technologies/form"
+

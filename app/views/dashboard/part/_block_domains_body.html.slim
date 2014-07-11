@@ -1,0 +1,11 @@
+.block-body.clearfix
+  - domains.each do | item |
+    - unless item.posts.first.blank?
+      .media
+        a.pull-left href="#{posts_domain_path(item)}"
+          img.media-object src="#{item.posts.first.logo}"
+        .media-body
+          h5.media-heading 
+            = link_to item.name,item
+          p = link_to item.posts.first.title,item.posts.first
+.clearfix

@@ -1,0 +1,26 @@
+.technology-infor
+  = render_cell :technologies, :operate, :current_user => current_user, :technology => @technology
+  br
+  p.gray.clearfix
+    span.pull-left
+      span.strong 企业名称：
+      span = @technology.name
+  p.gray.clearfix
+    span.pull-left
+      span.strong 企业地址：
+      span = @technology.address
+  p.gray.clearfix
+    span.pull-left
+      span.strong 机构电话：
+      span = @technology.phone
+  p.gray.clearfix
+    span.pull-left
+      span.strong 机构邮箱：
+      span = @technology.email
+  p.gray.clearfix
+    span.pull-left
+      span.strong 机构站点：
+      a href="#{@technology.url}" target="_blank" = @technology.url
+  p.gray 
+    span.strong 机构简介：
+    span = @technology.introduction

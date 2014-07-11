@@ -1,0 +1,12 @@
+ul.block-body
+  - hotting_enterprises.limit(5).each do | item |
+    li.clearfix
+      .avatar
+        a href="#{enterprise_path(item)}"
+          img src="#{item.avatar.url}"
+      .name
+        = link_to item.name,item
+      .industry
+        = item.industry.name
+      .url
+        = link_to "官网", item.url

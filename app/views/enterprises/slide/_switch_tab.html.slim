@@ -1,0 +1,17 @@
+.slide-field.switch-tab
+  ul
+    li class="#{action_name.eql?('show') ?  'active' : ''}"
+      a href="#{enterprise_path(@enterprise)}" 
+        i.icon-file-alt &nbsp;&nbsp;企业详情
+    li class="#{action_name.eql?('products') ?  'active' : ''}"
+      a href="#{products_enterprise_path(@enterprise)}" 
+        i.icon-star &nbsp;&nbsp;企业产品      
+    li
+      a href="#{@enterprise.url}" target="_blank" 
+        i.icon-eye-open &nbsp;&nbsp;访问站点      
+    li
+      a href="#{enterprise_path(@enterprise)}#live-a-message" 
+        i.icon-comment &nbsp;&nbsp;企业留言  
+    li
+      a href="javascript:void(history.back())"
+        i.icon-circle-arrow-left &nbsp;&nbsp;返&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;回        

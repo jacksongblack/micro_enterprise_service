@@ -1,0 +1,8 @@
+.nav-right.pull-left
+  ul
+    li 
+      p 热门产品的企业
+    - Enterprise.all.limit(4).each do |item|
+      li
+        a href="#{enterprise_path(item)}"
+          img src="#{item.avatar.url}"

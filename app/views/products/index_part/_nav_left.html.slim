@@ -1,0 +1,19 @@
+.nav-left.pull-left
+  ul
+    li
+      p 
+        strong 行业类别&nbsp;
+        i.icon-list
+    - industries.limit(7).each do |item,index|
+      li
+        i.icon-hand-right
+        = link_to item.name, products_industry_path(item)
+        i.icon-chevron-right
+    li.more
+      i.icon-hand-right
+      a.show_more_industries_nav href="javascript:void(0)"  +更多行业
+      i.icon-chevron-right
+    .more_industries_nav
+      .nav.clearfix
+        - industries.limit(7).each do |item,index|
+          = link_to item.name, products_industry_path(item)

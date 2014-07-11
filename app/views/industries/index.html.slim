@@ -1,0 +1,14 @@
+.pblock.source-wirte
+  .page-head
+    .bread-nav
+      = simple_breadcrumbs "行业管理",industries_path, "新建行业"
+  .page-body
+    .narrow
+      ul
+        = render "users/user_operate"
+    .wide
+      .content style="height:410px;"
+        = render "form"
+        = render "list"
+      .digg_pagination.clearfix
+        = will_paginate @industries, :container => false ,:next_label => "下一页",:previous_label => "上一页"

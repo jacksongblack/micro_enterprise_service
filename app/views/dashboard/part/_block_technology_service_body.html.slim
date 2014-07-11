@@ -1,0 +1,12 @@
+ul.block-body
+  - lastest_technologies.limit(4).each do | item |
+    li.clearfix
+      .avatar
+        a href="#{technology_path(item)}"
+          img src="#{item.avatar.url}"
+      .name
+        = link_to item.name,item
+      .tel
+        i.icon-phone-sign &nbsp;
+        span = item.phone
+

@@ -1,0 +1,17 @@
+ul.nav.nav-tabs
+  li.active
+    a href="#{posts_industry_path}" 热门信息
+  - industries.limit(9).each do |item|
+      li
+        a href="#{posts_industry_path(item)}"  = item.name
+  li.more_nav
+    .more_nav_content
+      .nav
+        i.icon-angle-up.pull-right
+        ul
+          - industries.offset(9).each do |item|
+            li
+              a href="#{posts_industry_path(item)}"  = item.name
+    a.more_nav href="javascript:void(0)"
+      i.icon-caret-down
+      span &nbsp;更多行业

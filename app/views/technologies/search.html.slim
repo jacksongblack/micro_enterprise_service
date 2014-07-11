@@ -1,0 +1,23 @@
+.pblock.search-technologies.clearfix
+  .technologies-title.bread 
+    .bread-nav
+      = simple_breadcrumbs "科技服务超市",technologies_path, "搜索：#{params[:search]}"
+      = render "search_form"
+  .wide.technologies-content
+    - if @technologies.blank?
+      .no_post
+        p !暂无内容.....  )::(
+    - else 
+      ul.media-list
+        - @technologies.each_with_index do|item,index|
+          li.media
+            a.pull-left href="#{technology_path(item)}"
+              img.media-object  src="#{item.avatar.url}"
+            .media-body
+              h2.media-heading = item.name
+              p.gray
+                = item.introduction
+      .digg_pagination.clearfix
+        = will_paginate @technologies, :container => false ,:next_label => "下一页",:previous_label => "上一页"
+  .narrow
+    = render "technologies/slide/lastest_technology"

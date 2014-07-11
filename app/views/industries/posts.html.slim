@@ -1,0 +1,14 @@
+.pblock.industry-posts
+  .wide.show-left
+    .tabbable
+      = render_cell :industries, :index_nav, :industry => @industry
+      .tab-content
+        .tab-pane.active
+          = render "posts/post_media"
+      .digg_pagination.clearfix
+        = will_paginate @posts, :container => false ,:next_label => "下一页",:previous_label => "上一页"
+  .narrow.right-recommend
+    = render "posts/search_form"
+    = render "industries/posts/hot_industry_posts"    
+    = render "industries/posts/lastest_industry_posts"
+    = render "industries/posts/guess_you_like_posts"    

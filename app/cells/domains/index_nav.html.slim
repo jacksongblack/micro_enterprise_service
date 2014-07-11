@@ -1,0 +1,32 @@
+ul.nav.nav-tabs
+  li
+    a href="#{posts_domain_path}" 热门新闻
+  - domains.limit(7).each do |item|
+      li class="#{item.name.eql?(@domain.name) ? 'active' : ''}"
+        a href="#{posts_domain_path(item)}"  = item.name
+  - unless domains.limit(7).include?(@domain)
+    li.more_nav.active
+      .more_nav_content
+        .nav
+          i.icon-angle-up.pull-right
+          ul
+            - domains.offset(7).each do |item|
+              li
+                a href="#{posts_domain_path(item)}"  = item.name
+      a.more_nav href="javascript:void(0)"
+        i.icon-caret-down
+        span &nbsp;
+        span = @domain.name
+  - else 
+    li.more_nav
+      .more_nav_content
+        .nav
+          i.icon-angle-up.pull-right
+          ul
+            - domains.offset(7).each do |item|
+              li
+                a href="#{posts_domain_path(item)}"  = item.name
+      a.more_nav href="javascript:void(0)"
+        i.icon-caret-down
+        span &nbsp;更多导航
+

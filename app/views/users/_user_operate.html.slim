@@ -1,0 +1,5 @@
+- sources_can_be_write.each do |source|
+  li class="#{source[0].eql?(controller_name) ? 'active' : ''}"
+    a href="#{source[2]}" 
+      i class="#{source[1]}"
+      span = raw source[3]

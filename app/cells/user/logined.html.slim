@@ -1,0 +1,41 @@
+.user.btn-group.pull-right
+  a.btn.btn-primary href="#"
+    i.icon-user.icon-white
+    span &nbsp;设置
+  a.btn.btn-primary.dropdown-toggle data-toggle="dropdown" href="#"
+    span.caret
+  ul.dropdown-menu
+    li
+      a href="#{edit_user_registration_path}"
+        i.icon-cog &nbsp;账户设置
+    /- if @current_user.has_role? :admin
+      li
+        a href="#{rails_admin_path}"
+          i.icon-cogs 后台管理
+    li
+      a href="#{enterprise_users_path}"
+        i.icon-hospital &nbsp;我的企业
+    - if @current_user.has_role? :admin
+      li.divider
+      li
+        a href="#{domains_rsses_path}"
+          i.icon-pencil &nbsp;RSS管理
+      li
+        a href="#{domains_path}"
+          i.icon-pencil &nbsp;新建新导
+      li
+        a href="#{new_technology_path}"
+          i.icon-pencil &nbsp;科服机构
+      li
+        a href="#{industries_path}"
+          i.icon-pencil &nbsp;新建行业
+    li.divider
+    li
+      a href="#{new_product_path}"
+        i.icon-pencil &nbsp;发布产品
+    li
+      a href="#{new_post_path}"
+        i.icon-pencil &nbsp;发布新闻
+    li.divider
+    li
+      = link_to raw("<i class='icon-signout'>&nbsp;退出系统</i>") ,destroy_user_session_path,method:"delete"

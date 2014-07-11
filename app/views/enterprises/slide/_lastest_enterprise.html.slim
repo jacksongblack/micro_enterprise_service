@@ -1,0 +1,18 @@
+.slide-field.lastest-enterprise
+  .blue-title 
+    .title
+      h4 最新注册企业
+      span.pull-left  
+  ul.media-list
+    - lastest_enterprises.each do|item|
+      li.media
+        a.pull-left href="#{enterprise_path(item)}"
+          img.media-object  src="#{item.avatar.url}"
+        .media-body
+          h4.media-heading
+            a href="#{enterprise_path(item)}"
+              = item.name
+          p.gray
+            span = item.address
+            span = item.url
+            span = item.email

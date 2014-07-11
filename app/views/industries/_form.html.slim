@@ -1,0 +1,6 @@
+= simple_form_for Industry.new, html: { class: 'form-horizontal clearfix'}  do |f|
+  .form-left.clearfix
+    = f.input :name, input_html: { maxlength: 5 }
+  .form-right.clearfix
+    = f.button :submit, :disable_with => '创建中...' 
+  

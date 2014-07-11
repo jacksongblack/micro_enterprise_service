@@ -1,0 +1,15 @@
+.pblock.source-wirte
+  .page-head
+    .bread-nav
+      = simple_breadcrumbs "新闻导航管理",domains_path, "新建新闻导航"
+  .page-body
+    .narrow
+      ul
+        = render "users/user_operate"
+    .wide
+      .content style="height:410px;"
+        = render "form"
+        = render "list"
+      .digg_pagination.clearfix
+        = will_paginate @domains, :container => false ,:next_label => "下一页",:previous_label => "上一页"
+

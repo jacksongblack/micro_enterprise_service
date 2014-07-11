@@ -1,0 +1,18 @@
+- if @posts.blank?
+  .no_post
+    p !暂无内容.....  )::(
+- else 
+  - @posts.each do |item|
+    .media
+      a.pull-left href="#"
+        img class="media-object" alt="64x64" style="width: 64px; height: 64px;" src="#{item.logo}"
+      .media-body
+        p.media-heading 
+          = link_to item.title, item  
+          /* title 属性*/
+        span &nbsp;
+        = item.description
+        span ...
+        = render_cell :posts, :infor, :post => item
+        span.more
+          = link_to "[阅读全文]", item  

@@ -1,0 +1,21 @@
+- if products.blank?
+  .no_post
+    p !暂无内容.....  )::(
+- else 
+  .column.hotting_product
+    ul.clearfix
+      - products.each do |item|
+        li.pull-left
+          .avatar
+            a href="#{product_path(item)}"
+              img src="#{item.avatar.url}"
+          h5.name.gray = item.name
+          p.attr 
+            span.red 
+              span ￥
+              span = item.price
+            span &nbsp;元
+            span.pull-right
+              span 来自：
+              span
+                a href="#{enterprise_path(item.enterprise)}" title="#{item.enterprise.name}" = item.enterprise.name

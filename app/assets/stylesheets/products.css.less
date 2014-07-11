@@ -1,0 +1,260 @@
+@import "mes_common_style";
+
+//product 公共less
+// 一行两列的product产品 less
+.hotting_product{
+    ul{
+	margin: 0;
+	margin-top: 30px;
+	li{
+	    .avatar{
+		max-width: 100%;
+		height:240px;
+		img{ max-height: 240px;
+		     margin: 0 auto;
+		     display: block;
+		     opacity: 0.8;}
+	    }
+	    width:32%;
+	    margin-right: 10px;
+	    margin-bottom: 40px;
+	    border-bottom: 1px solid #eaeaea;
+	    &:hover{
+		border-bottom: 1px solid red;
+		img{opacity: 1;}
+	    }
+	}
+    }
+}
+
+//product 最新产品less
+.lastest_product{
+    ul{
+	margin-top: 30px;
+	li{
+	    .avatar{
+		max-width: 100%;
+		height:240px;
+		img{ max-height: 240px;
+		     margin: 0 auto;
+		     display: block;
+		     opacity: 0.8;}
+	    }
+	    width:24%;
+	    margin-right: 10px;
+	    margin-bottom: 40px;
+	    border-bottom: 1px solid #eaeaea;
+	    &:hover{
+		border-bottom: 1px solid red;
+		img{opacity: 1;}
+	    }
+	}
+    }
+}
+
+// 猜你喜欢products less
+.recommend_products{
+    ul.media-list{
+	margin: 30px 0 0 10px;
+	li.media{
+	    img{width:125px;max-height: 82px;}
+	}
+    }
+}
+
+
+//-------------------具体页面布局
+.product-index{
+    .page-nav{
+	height: 300px;
+	.nav-left{
+	    width:12%;
+	    ul{
+		list-style: none;
+		margin-left: 0px;
+		li{
+		    padding: 7px 10px;
+		    border: 1px dashed #f1f1f1;
+		    &:hover,&.more{
+			background-color: #f1f1f1;
+		    }
+		    &:first-child{
+			background-color: #eee;
+			border: 0px;
+			p{
+			    text-align: center;
+			    font-size: 18px;
+			    margin: 5px;
+			    color: #aaa;
+			}
+		    }
+		    i{
+			color: #ddd;
+			padding: 0 7px 0 0;
+
+		    }
+		    .icon-chevron-right{float:right;}
+		}
+		.more_industries_nav{
+		    display:none;
+		    float: left;
+		    position: relative;
+		    z-index: 30000;
+		    margin: -37px 0 0 140px;
+		    width: 750PX;
+		    height:0px;
+		    .nav{
+			background-color: #f1f1f1;
+			border: 1px dashed #fafafa;
+			padding-top: 5px;}
+		    a{padding: 0px 20px;
+		      display: block;
+		      float: left;
+		      margin-bottom: 10px;}
+		}
+	    }
+	}
+	.nav-center{
+	    width:70%;
+	    height:345px;
+	    .carousel-indicators{
+		right: 50%;
+		top: 20px;
+		.active{background-color: #005afc;}
+		li{background-color: #aaa;}
+	    }
+	    .carousel-inner{border: 1px dashed;
+			   img{height:330px;}}
+	    .carousel-control{
+		top: 45%;
+		border: 0px;
+		color: #999;
+		font-size: 40px;
+		background: none;
+		
+	    }
+	}
+	.nav-right{
+	    width:18%;
+	    ul li{
+		&:first-child{
+		    background-color: #eaeaea;		    
+		    p{padding: 3px;}
+		}
+		margin-bottom:10px;
+		img{max-height:80px;
+		    display: block;
+		    margin: 0 auto;
+		   }
+	    
+	    }
+	}
+	
+    }
+    .field{
+	border-bottom: 3px solid #005fac;
+	.wide{
+	    .blue-title{
+		form{margin: -12px 0 0 0;
+		     input{width: 330px;}}
+	    }
+	    .hotting_product{
+		// 引用公共的less
+	    }
+
+	}
+	.lastest_product{
+	    // 引用公共的less
+	}
+	.narrow{
+	    // 引用公共的less
+	}
+    }
+    .index-ad{
+	margin-top: 30px;
+    }
+
+}
+// product new UI 
+.source-wirte{
+    .product_description{
+	float: left;
+	padding-top: 30px;
+	border-top: 1px solid #ededed;
+	margin-top: 30px;
+    }
+}
+
+
+.product-show{
+    .show-left{
+	.bread-nav();
+	.product-header h3{
+		color: @main-color;
+		text-align: center;
+		font-weight: 300;
+		padding-bottom: 20px;}
+	.media{
+	    margin-bottom: 30px;
+	    a.pull-left{
+		width: 400px;
+		height: 340px;
+	    }
+	    .table-condensed td {
+		padding: 12px 5px;
+		border-top: 0px;
+		border-bottom: 1px solid #f1f1f1;
+		button{margin: 25px 0 0 0;
+          background: #fff;
+          border: 0;
+          box-shadow: none;
+          color: #000;}
+	    }
+	}
+	.product-warning{
+	    background-color: #eee;
+	    padding: 10px 10px 1px 10px;
+	    margin-bottom: 20px;
+	    .title{
+		font-weight: bolder;
+		font-size: 15px;
+	    }
+	}
+	.product-description{
+            .hoting-title();
+	    .title{margin-bottom:30px;}
+	    margin-top:60px;
+	    min-height:500px;
+	}
+	.product-ads{
+	    .begin{
+		background: url("/assets/ad_begin.jpg");
+		width: 72%;
+		height: 23px;
+		background-position: 2px 5px;
+		margin: 23px 0 0 16%;
+	    }
+	    img{
+		width: 95%;
+		height: 100px;
+		margin: 25px 0 50px 5%;
+	    }
+	}
+    }
+}
+
+.search-products{
+    form{
+	float: right;
+	margin: -50px 0px;
+	input{width: 260px;}
+    }
+}
+
+p.attr .pull-right{
+  max-width: 60%;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

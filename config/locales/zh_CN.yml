@@ -1,0 +1,145 @@
+# encoding: utf-8
+zh_CN:
+  system_name: "中小微企业信息服务平台"	
+  system_short_name: "微企服网"
+  logo_url: "/assets/logo.jpg"
+
+  activerecord:
+    errors:
+      models:
+        rss:
+          attributes:
+            url:
+              taken: 'RSS地址已存在！不能创建地址相同的RSS额！'
+        user:
+          attributes:
+            current_password: 
+              invalid: "当前密码错误！"
+            email:
+              taken: '此邮箱已被注册！'
+            password:
+              too_short: "密码太短，请输入8位以上的密码！"
+            password_confirmation:
+              confirmation: "两次输入密码不一致！"
+        domain:
+          attributes:
+            name:
+              taken: '该名称的导航类别已存在！不能创建名称相同的导航额！'
+        industry:
+          attributes:
+            name:
+              taken: '该名称的行业已存在！不能创建名称相同的行业额！'
+        product:
+          attributes:
+            industry_id:
+              blank: '你没有选择所属行业，请选择所属行业后再提交！'
+            enterprise_id:
+              blank: '你没有选择所属企业，请选择所属企业后再提交！'
+            price:
+              too_long: '你的价格报的太高拉！我们只接受8位数以下的价格额！'
+            user_id:
+              blank: '当前用户为空，请登录后再操作！'
+            description:
+              blank: '你还没有填写产品详情！，请填写产品详情（可附图，视频等附件）后再提交！'
+        enterprise:
+          attributes:
+            industry_id:
+              blank: '你没有选择所属行业，请选择所属行业后再提交！'
+            phone:
+              not_a_number: '请输入全数字在电话号码！'
+              too_long: '你输入的号码太长了！请正确输入电话号码！'
+              too_short: '你输入的号码太短了！请正确输入电话号码！'
+        post:
+          attributes:
+            user_id:
+              blank: '当前用户为空，请登录后再操作！'
+            description:
+              blank: '你还没有填写信息摘要，请填写信息摘要后再提交！'
+              too_short: '摘要信息太短，请填写10字到250字的摘要信息！'
+              too_long: '摘要信息太长，请填写10字到250字的摘要信息！'
+            content:
+              blank: '你还没有填写信息内容，请填写信息内容后再提交！'
+        technology:
+          attributes:
+            services:
+              blank: '你还没有填写服务内容，请填写服务内容后再提交！'
+            phone:
+              not_a_number: '请输入全数字在电话号码！'
+              too_long: '你输入的号码太长了！请正确输入电话号码！'
+              too_short: '你输入的号码太短了！请正确输入电话号码！'
+
+  controller:
+    application:
+      sigin_with_no_enterprise: "你还没有填写你所在企业的相关信息额，块来填写一下吧！"
+      routes_error: "你所访问的url不存在！"
+    post:
+      copy_right: "本文版权归原文作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利!"
+      create:
+        success: "新闻创建成功!"
+        fail: "新闻创建失败，请仔细查看错误提示！"
+      update:
+        success: "新闻更新成功！"
+    rss:
+      grab_from:
+        success: "Rss抓取成功,此次成功抓取数据条数为："
+      create:
+        success: "RSS创建成功!"
+        fail: "RSS创建失败，请仔细查看错误提示！"
+      update:
+        success: "RSS更新成功！"
+      destroy:
+        success: "RSS删除成功！"
+    domain:
+      create:
+        success: "新闻导航创建成功!"
+        fail: "新闻导航创建失败，请仔细查看错误提示！"
+      update:
+        success: "新闻导航更新成功！"
+      destroy:
+        success: "新闻导航删除成功！"
+    industry:
+      create:
+        success: "行业创建成功!"
+        fail: "行业创建失败，请仔细查看错误提示！"
+      update:
+        success: "行业更新成功！"
+      destroy:
+        success: "行业删除成功！"
+    enterprise:
+      create:
+        avater_lable: "选择企业形象图片"
+        success: "企业创建成功!"
+        fail: "企业创建失败，请仔细查看错误提示！"
+      update:
+        success: "企业更新成功！"
+    technology:
+      create:
+        success: "科技服务机构创建成功!"
+        fail: "科技服务机构创建失败，请仔细查看错误提示！"
+      update:
+        success: "科技服务机构更新成功！"
+      destroy:
+        success: "科技服务机构删除成功！"
+    product:
+      warning: '本站支付由第三方支付宝代理支付，为了购买到放心的产品，在购买前，请详细的查看产品相关的信息，出现任何质量或经济纠纷等均与本站无关！'
+      create:
+        avater_lable: "选择产品图片"
+        success: "产品创建成功!"
+        fail: "产品创建失败，请仔细查看错误提示！"
+      update:
+        success: "产品更新成功！"
+  model:
+    rss:
+      url:
+        blank: "rss的url不能为空！"
+      image:
+        blank: "image不能为空！"
+    field:
+      encoding_error: "<编码有无，部分数据遗失.....>"
+  ckeditor:
+    page_title: "CKEditor 副文本编辑器"
+    confirm_delete: "确定删除该文件?"
+    buttons:
+      cancel: "取消"
+      upload: "上传"
+      delete: "删除"

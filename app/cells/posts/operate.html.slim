@@ -1,0 +1,5 @@
+.post-operate.clearfix
+  .pull-right
+    = link_to raw('<i class="icon-remove-sign">&nbsp;删除</i>'), @post, :confirm => '你确定要删除吗?', :method => :delete
+    span style="color: #ccc;" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    = link_to raw('<i class="icon-edit">&nbsp;编辑</i>'), edit_post_path(@post)

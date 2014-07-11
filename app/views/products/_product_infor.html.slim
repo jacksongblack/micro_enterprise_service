@@ -1,0 +1,38 @@
+.media
+  a.pull-left
+    img.media-object src="#{@product.avatar.url}"
+  .media-body
+    table.table.table-condensed
+     tbody
+       tr
+         td = t('simple_form.labels.product.new.name')
+         td = @product.name
+       tr
+         td = t('simple_form.labels.product.new.price')
+         td.red
+           span = @product.price
+           span ￥
+       tr
+         td = t('simple_form.labels.product.new.industry')
+         td = @product.industry.name
+       tr
+         td = t('simple_form.labels.product.new.enterprise')
+         td = link_to @product.enterprise.name, enterprise_path(@product.enterprise)
+       tr
+         td 企业详情
+         td rowspan="2" 
+           p 
+             span 地址：
+             span = @product.enterprise.address
+           p 
+             span 电话：
+             span = @product.enterprise.phone
+           p 
+             span 网站：
+             = link_to @product.enterprise.url,@product.enterprise.url
+           p 
+             span 邮箱：
+             span = @product.enterprise.email
+       tr 
+         td
+           p(style="width:87px;margin-top: 30px;") 联系方式&nbsp;

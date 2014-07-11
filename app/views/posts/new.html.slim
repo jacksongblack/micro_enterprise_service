@@ -1,0 +1,13 @@
+.pblock.source-wirte
+  .page-head
+    .bread-nav
+      = simple_breadcrumbs "新闻导航",posts_domain_path, "创建新闻"
+      h5 创建新闻
+  .page-body
+    .narrow
+      ul
+        = render "users/user_operate"
+    .wide
+      .content
+        = render "posts/form"
+

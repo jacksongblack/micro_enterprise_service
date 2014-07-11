@@ -1,0 +1,13 @@
+.guess_you_like_posts.recommand_posts
+  .blue-title
+    .title
+      p 
+        span 猜你喜欢&nbsp;&nbsp;
+        img src="/assets/hot_post_point.png"
+      span.pull-left
+      span.pull-right
+  ul
+    - guess_you_like_domain_posts.each_with_index do |item,index|
+      li
+        span class="#{lastest_domains_posts_hot(index+1)}" = index+1
+        = link_to item.title, item

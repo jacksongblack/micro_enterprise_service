@@ -1,0 +1,18 @@
+table.table.table-condensed
+  tr
+    th ID序号
+    th 行业名称
+    th 创建时间
+    th 操作
+  - @industries.each do |item|
+    tr
+      td
+        span.badge = item.id
+      td = item.name
+      td = format_for item.created_at
+      td 
+        a title="编辑该条行业" data-toggle="modal" href="#edit_industry_by_id_#{item.id}"
+          i.icon-pencil &nbsp;&nbsp;
+        = render "edit", :industry => item
+        a href="javascript:void(0)" onclick="delete_item(this,'该行业下的所有新闻，企业，产品都会被删除')" title="删除该条行业" data-method="delete" ref="#{industry_path(item)}"
+          i.icon-remove &nbsp;&nbsp;

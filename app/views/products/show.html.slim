@@ -1,0 +1,22 @@
+.pblock.product-show
+  .wide.show-left
+    .bread-nav
+      = detail_breadcrumbs @product
+    .product-header
+      h3 = @product.name
+    = render "product_infor"
+    = render_cell :products, :operate, :current_user => current_user, :product => @product
+    /.product-warning
+      p
+        span.title 注意：
+        = t('controller.product.warning')
+    .product-description
+      .title
+        h4 产品详情
+        span.pull-left
+      article = raw @product.description
+    .product-ads
+      .begin
+      img src="/assets/post_ad.jpg"
+  .narrow
+    = render "products/index_part/recommend_products", :products => @products

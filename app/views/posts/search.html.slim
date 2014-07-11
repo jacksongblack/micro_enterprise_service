@@ -1,0 +1,14 @@
+.pblock.post-search
+  .wide.search-left
+    .bread-nav
+      - if params[:source].eql?("industries")
+        = simple_breadcrumbs "行业信息",industries_path, "搜索：#{params[:search]}" 
+      - else
+        = simple_breadcrumbs "新闻导航",domains_path, "搜索：#{params[:search]}" 
+    = render "posts/post_media"
+    .digg_pagination.clearfix
+        = will_paginate @posts, :container => false ,:next_label => "下一页",:previous_label => "上一页"
+  .narrow.right-recommend
+    = render "domains/posts/hot_domain_posts"
+    = render "domains/posts/lastest_domain_posts"
+    = render "domains/posts/guess_you_like_posts"

@@ -1,0 +1,366 @@
+@import "mes_common_style";
+
+//dashborad 大屏幕的less
+.animation-nav{
+    background-color: @main-color;
+    height: 320px;
+    overflow: hidden;
+    .picture-block{
+	background: url("/assets/hd.png") no-repeat scroll 0 0 transparent;
+	height: 320px;
+	width: @max-width;
+	margin: 0 auto;
+	.field.pull-left{
+	    width: 50%;
+	    height: inherit;
+	}
+	.field.pull-right{
+	    .login-block{ background-color: #fff;
+			  width:inherit;
+			  height:inherit;
+			}
+	    margin-top: 15px;
+	    position: relative;
+	    width: 300px;
+	    height: 290px;
+	    border-radius: 4px;
+	    overflow: hidden;
+	    .header{
+		background-color: #e1e1e1;
+		height: 36px;
+		line-height: 36px;
+		padding: 0 15px;
+		span{font-size: 17px;}
+	    }
+	    .body form{
+		margin: 17px 40px;
+	    }
+	    .proxy-login{
+		padding-top: 5px;
+		margin: 0px 0 0 40px;
+		a:first-child{margin-right: 22px;}
+	    }
+	}
+	.exhibition{
+	    background-color: #005fac;
+	    img{margin: 40px 0 0 36px;}
+	}
+    }
+}
+
+// dashbord -index 的一些公共宏观布局
+.dashbord-index{
+    .field{
+	.narrow{
+	    width: 32% !important;
+	    a{text-decoration: none;
+	      display: block;
+	      margin-bottom: 2px;
+	      font-size: 15px;
+	     }
+	    div[class^=block]{
+		.block-body {
+		    margin-top: 10px;
+		}
+	    }
+	}
+        .l, .m{
+	    margin-right: 2%;
+	}
+    }
+    .wide{
+	border-right: 0px !important;
+    }
+}
+
+
+// ------------dashbord 每个小模块的布局less--------------
+//-------------Byronlee--------------------------------
+//-------------2013-12-22------------------------------
+
+// 第一个field
+
+// dashboard 坐标（1,1）新闻资讯
+.block-domains-focus{
+    .block-body {
+	margin-left: 0px;
+	margin-top: 10px;
+	.slide{height: 195px;}
+	.item a {
+	    margin-left:0px;
+	    float: left;
+	    width: 49%;
+	    img{margin-bottom: 15px;}
+	    &:nth-child(odd) {
+		float:right;
+	    }
+	    p:hover{color:#FF6600;}
+	}
+	.link a {
+	    height: 23px;
+	    overflow: hidden;
+        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+	}
+	div[class*="span"] {
+	    margin-left:0px;
+	}
+    }
+}
+
+// dashboard 坐标（1,2）新闻看点
+.block-domains{
+    .block-body {
+	margin-bottom: 10px;
+	.media{
+	    .pull-left {
+		margin-right: 10px;
+		display: block;
+		width: 40%;
+	    }
+	    width: 50%;
+	    float: left;
+	    height: 67px;
+	    overflow: hidden;
+	    margin-bottom: 15px;
+	    margin-top: 0px;
+	    p{padding-right: 10px;
+          word-break: break-all;
+	     a{color:#555;
+	      &:hover{color:#FF6600;}}}
+	}
+    }
+}
+
+// dashboard 坐标（1,3）正在发生
+.block-now{
+    .block-body{
+	padding: 20px 0;
+	.roll{
+	    height: 200px;
+	    overflow: hidden;
+	    ul{
+		margin:0px;
+		li{
+		    height: 27px;
+		    overflow: hidden;
+		    font: 14px/27px arial;
+		    i{margin-right: 6px;}
+		}
+	    }
+	}
+    }
+}
+
+
+// dashboard 坐标（2,1）今日热点
+.block-today-hotting{
+    height:1213px;
+    overflow:hidden;
+    a{
+	font-size: 15px;
+	margin: 5px;
+	color: #333;
+	overflow: hidden;
+	height: 20px;
+	margin-right: 15px;
+	color: #555;
+	float: left;
+	&:nth-child(5n) {
+	    color: @main-color;
+	    font-size: 17px;
+	    font-weight: bold;
+	}
+	&:hover{
+	    color:#FF6600;
+	}
+
+    }
+}
+
+// dashboard 坐标（3,1）快捷浏览
+.block-site-module{
+    .block-body{
+	margin-bottom:20px;
+	ul{
+	    margin: 0px;
+	    li{
+		float: left;
+		margin: 5px 5px 0 0;
+		height: 75px;
+		width: 32%;
+		background-color: @main-color+1;
+		a{
+		    color: #f1f1f1;
+		    cursor: pointer;
+		    i{
+			display: block;
+			font-size: 40px;
+			padding: 5% 36%;
+		    }
+		    span{
+			display: block;
+			text-align: center;
+		    }
+		}
+		&:hover{
+	    	    background-color: @main-color+10;
+		    a{color:#fff;}
+		}
+	    }
+	}
+    }
+}
+
+// 第二个field
+
+// dashboard 坐标（1,4）行业资讯
+// dashboard 坐标（2,2）行业热点
+// dashboard 坐标（2,3）最新行业动态
+.block-industries-focus, .block-industry-hotting-posts, .block-lastest-industry-posts{
+    .block-body {
+	margin: 0px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	li {
+	    margin-left: 0px;
+	    float: left;
+	    width: 32%;
+	    margin-right: 7px;
+	    img{margin-bottom: 15px;}
+	    &:nth-child(even) {
+		float:right;
+		margin-right: 0px;
+	    }
+	    &:hover{
+		opacity: 0.9;
+		cursor: pointer;
+		p{color:#FF6600;}
+	    }
+
+	}
+	ul{
+	    margin: 0 0 0 17px;
+	    list-style-type: disc;
+	    li{
+		width:100%;
+		height:22px;
+		background:#fff;
+		a{color:#333;
+		  &:hover{color:#FF6600;
+			  height:23px;
+			  overflow:hidden;
+			 }
+		 }
+		&:nth-child(5n) {
+		    a{color: #0088cc;}
+		    font-size: 16px;
+		    line-height: 32px;
+		    font-weight: normal;
+		    font-family: "Microsoft Yahei";
+		    overflow: hidden;
+		    height: 34px;
+		}
+	    }
+	}
+	div[class*="span"] {
+	    margin-left:0px;
+	}
+    }
+}
+
+//dashboard 坐标（3,3）热门行业
+.block-industries{
+    .block-body{
+	margin-bottom: 25px;
+	a{
+	    display: inline-block !important;
+	    line-height: 36px;
+	    background-color: #f4f4f4;
+	    border-bottom: 2px solid #fff;
+	    border-left: 2px solid #fff;
+	    padding: 0px 10px;
+	    &:nth-child(2n) {
+		padding: 0px 50px;
+	    }
+	}
+    }
+}
+
+//dashboard 坐标（3,5）科技服务机构
+.block-technology-service{
+    .block-body{
+	margin:0px;
+	li{
+	    min-height: 50px;
+	    margin-bottom: 5px;
+	    div{float:left;
+		line-height: 50px;
+		text-align: center;
+		overflow: hidden;}
+	    border-bottom: 1px solid #f1f1f1;
+	    .avatar{
+		width: 25%;
+	    }
+	    .name{width: 43%;}
+	    .tel{width: 32%;}
+	}
+    }    
+}
+
+//dashboard 坐标（1,5）行业推荐
+.block-industries-recommend-posts{
+    .block-body{
+	margin: 0 0 0 0px;
+	margin-bottom: 20px;
+	list-style-type: disc;
+	li{
+	    width:100%;
+	    height:22px;
+	    overflow:hidden;
+	    a{color:#333;
+	      &:hover{color:#FF6600;}
+	     }
+	    &:nth-child(5n) {
+		a{color: #0088cc;}
+		font-size: 16px;
+		line-height: 32px;
+		font-weight: normal;
+		font-family: "Microsoft Yahei";
+		overflow: hidden;
+		height: 34px;
+	    }
+	}
+    }
+}
+
+//dashboard 坐标（1,6）热门企业
+//dashboard 坐标（2,4）最新企业
+.block-hotting-enterprises, .block-lastest-enterprises{
+    .block-body{
+	margin:0px;
+	li{
+	    min-height: 50px;
+	    margin-bottom: 5px;
+	    div{float:left;
+		line-height: 50px;
+		text-align: center;
+		overflow: hidden;}
+	    border-bottom: 1px solid #f1f1f1;
+	    .avatar{
+		width: 25%;
+		img{max-height:50px;}
+	    }
+	    .name{width: 43%;height:40px;overflow:hidden;}
+	    .industry{width: 22%;}
+	    .url{width: 10%;}
+	}
+    }
+    
+}
+
+//dashboard 坐标（3,5）广告
+.block-ads-list{
+    img{margin-bottom:11px;}
+}

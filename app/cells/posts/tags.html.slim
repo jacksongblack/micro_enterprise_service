@@ -1,0 +1,4 @@
+.post-tag
+  p 
+    span 标签：
+    = raw @tags.map { |t| link_to t, "javascript:void(0)",class: 'label' }.join('&nbsp;,&nbsp;') 

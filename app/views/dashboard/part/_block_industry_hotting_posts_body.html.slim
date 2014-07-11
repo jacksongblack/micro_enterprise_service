@@ -1,0 +1,13 @@
+ul.thumbnails.block-body
+  - posts=industry_hotting_post(27)
+  - posts[0..2].each do | item |
+    li
+      a href="#{post_path(item)}"
+        img src="#{item.images.first}" 
+        p.gray = item.title
+  .clearfix
+  ul.clearfix.gray
+    - posts[3..27].each do |item|
+      li
+        = link_to item.title,item
+.clearfix

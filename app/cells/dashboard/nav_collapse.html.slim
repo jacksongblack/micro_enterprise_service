@@ -1,0 +1,27 @@
+.nav-collapse
+  ul.nav
+    - system_plates.each do |plate|
+      - if plate[0].eql?("tools")
+        li class="dropdown #{plate[0].eql?(@controller_name) ? 'active' : ''}"
+          a.dropdown-toggle data-toggle="dropdown" href="#"
+            span = raw plate[2]
+            b.caret
+          ul.dropdown-menu
+            li 
+              = link_to "快递查询",tools_express_path
+            li 
+              = link_to "专利查询",tools_patent_path
+      - elsif plate[0].eql?("industries")
+        li class="#{!@action_name.eql?("products")&&@controller_name.eql?("industries") ? 'active' : ''}"
+          a href="#{plate[1]}" = raw plate[2]
+      - elsif plate[0].eql?("products")
+        - if @controller_name.eql?("products")
+          li class="active"
+            a href="#{plate[1]}" = raw plate[2]
+        - else
+          li class="#{@action_name.eql?("products")&&@controller_name.eql?("industries") ? 'active' : ''}"
+            a href="#{plate[1]}" = raw plate[2]
+      - else
+        li class="#{plate[0].eql?(@controller_name) ? 'active' : ''}"
+          a href="#{plate[1]}" = raw plate[2]
+

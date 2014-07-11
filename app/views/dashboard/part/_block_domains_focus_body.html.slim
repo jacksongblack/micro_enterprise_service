@@ -1,0 +1,24 @@
+ul.thumbnails.block-body
+  #myCarousel.carousel.slide
+    .carousel-inner
+      - posts=focus_domain_posts(11)
+      - if posts.length>4
+        .item.active
+          a href="#{post_path(posts[0])}"
+            img src="#{posts[0].images.first}" 
+            p.gray = posts[0].title
+          a href="#{post_path(posts[1])}"
+            img src="#{posts[1].images.first}" 
+            p.gray = posts[1].title
+        .item
+          a href="#{post_path(posts[2])}"
+            img src="#{posts[2].images.first}" 
+            p.gray = posts[2].title
+          a href="#{post_path(posts[3])}"
+            img src="#{posts[3].images.first}" 
+            p.gray = posts[3].title
+  .clearfix
+    .link
+      - posts.offset(4).each do |item|
+        = link_to raw("<i class='icon-double-angle-right'>&nbsp;</i>"+item.title),item,:title => item.title
+.clearfix

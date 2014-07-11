@@ -1,0 +1,17 @@
+.pblock.source-wirte
+  .page-head
+    .bread-nav
+      = simple_breadcrumbs "RSS管理",domains_rsses_path, "行业信息RSS"
+      a href="#{domains_rsses_path}"
+        button.btn.btn-primary.pull-right 新闻导航RSS
+  .page-body
+    .narrow
+      ul
+        = render "users/user_operate"
+    .wide
+      .content style="height:410px;"
+        = render "rsses/form"
+        = render "rsses/list", :region_name => "所属行业"
+      .digg_pagination.clearfix
+        = will_paginate @rsses, :container => false ,:next_label => "下一页",:previous_label => "上一页"        
+

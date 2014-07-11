@@ -1,0 +1,9 @@
+.block-body.clearfix
+  ul
+    - system_plates.last(6).each do |item|
+      li
+        a href="#{item[1]}"
+          i class="#{item[3]}"
+          span = item[2]
+.clearfix
+

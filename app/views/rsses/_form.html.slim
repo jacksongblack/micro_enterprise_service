@@ -1,0 +1,11 @@
+= simple_form_for Rss.new, html: { class: 'form-horizontal clearfix'}  do |f|
+  .form-left.clearfix
+    = f.input :sitename, input_html: { maxlength: 10 }
+    = f.input :url, :as => :url
+  .form-right.clearfix
+    - if action_name.eql?("domains")
+      = f.association :domain, hint: t('simple_form.prompt.rss.new.domain'), required: true
+    - else
+      = f.association :industry, hint: t('simple_form.prompt.rss.new.industry'), required: true
+    = f.button :submit, :disable_with => '创建中...' 
+  

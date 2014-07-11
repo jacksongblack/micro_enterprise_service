@@ -1,0 +1,12 @@
+.modal.modal.hide.fade.edit_rss id="edit_rss_by_id_#{rss.id}"
+  .modal-header
+    a.close data-dismiss="modal" ×
+    h3 
+      i.icon-pencil &nbsp;&nbsp;编辑RSS
+  = simple_form_for rss, html: { class: 'form-horizontal'}  do |f|
+    .modal-body
+        = f.association :domain, prompt: t('simple_form.prompt.rss.new.domain'), required: true
+        = f.input :sitename, input_html: { maxlength: 10 }
+        = f.input :url, :as => :url
+    .modal-footer
+      = f.button :submit, :disable_with => '更新中...' 

@@ -1,0 +1,34 @@
+table.table.table-condensed
+  tr
+    th ID序号
+    th 站点名称
+    th RSS地址
+    th = region_name
+    th 操作
+    td
+      a.grab_data href="/rsses/grab_from?region=#{action_name}" data-remote="true"
+        button.btn.btn-primary 
+          i &nbsp;
+          span 所有RSS抓取
+  - @rsses.each do |rss|
+    tr
+      td
+        span.badge = rss.id
+      td = rss.sitename
+      td = rss.url
+      td 
+        - if action_name.eql?("domains")
+          = rss.domain.name
+        - else
+          = rss.industry.name
+      td 
+        a title="编辑该条RSS信息" data-toggle="modal" href="#edit_rss_by_id_#{rss.id}"
+          i.icon-pencil &nbsp;&nbsp;
+        = render "edit", :rss => rss
+        a href="#{rss_path(rss)}" title="删除该条RSS信息" data-method="delete"
+          i.icon-remove &nbsp;&nbsp;
+      td
+        a.grab_data href="/rsses/grab_from?region=#{action_name}&&id=#{rss.id}" data-remote="true"
+          button.btn.btn-primary 
+            i &nbsp;
+            span 抓取

@@ -1,0 +1,10 @@
+.pblock.search-products
+  .products-title.bread 
+    .bread-nav
+      = simple_breadcrumbs "产品市场",products_path, "搜索：#{params[:search]}"
+      = render "search_form"
+  .wide.products-content
+    .products
+      = render "products/index_part/hotting_products", :products => @products
+  .narrow
+    = render "products/index_part/recommend_products", :products => best_seller_products

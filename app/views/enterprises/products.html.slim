@@ -1,0 +1,11 @@
+.pblock.enterprise-products
+  .wide.products-content
+    .bread
+      .bread-nav
+        = simple_breadcrumbs "企业黄页", enterprises_path, "企业产品"    
+    = render "products/index_part/hotting_products", :products => @products
+  .narrow
+    = render "enterprises/slide/switch_tab"
+    = render "enterprises/slide/lastest_enterprise"
+
+

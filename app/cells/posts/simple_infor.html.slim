@@ -1,0 +1,25 @@
+.post-infor
+  span 发布时间：
+  span = format_for(@post.created_at)
+  span &nbsp;&nbsp;&nbsp;
+  span 阅读数：
+  span  
+    font color="#FF6347" = @post.views.count
+  span  &nbsp;&nbsp;&nbsp;
+  span 来源：
+  span = @post.from
+  /.jiathis_style
+    span
+      span 分享到：
+      a.jiathis_button_qzone 
+      a.jiathis_button_tsina 
+      a.jiathis_button_tqq 
+      javascript:
+        var jiathis_config={
+          data_track_clickback:true,
+          summary:"",
+          shortUrl:false,
+          hideMore:false
+        }
+  .clearfix
+

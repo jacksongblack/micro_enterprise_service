@@ -1,0 +1,29 @@
+.animation-nav
+  .picture-block
+    .field.pull-left
+      #myCarousel.carousel.slide
+        ol.carousel-indicators
+          li.active[data-target="#myCarousel" data-slide-to="0"]
+          li[data-target="#myCarousel" data-slide-to="1"]
+        .carousel-inner
+          .active.item
+            img src="assets/dashboar_screen_ani.png" alt=""
+          .item
+            img src="assets/dashboar_screen_ani.png" alt="" 
+    .field.pull-right
+      .login-block
+        .header
+          span.icon-lock &nbsp;快捷登录  
+          a.pull-right href="#{new_user_registration_path}" 创建帐号？
+        .body
+          = simple_form_for(@user, :url => user_session_path) do |f|
+            = f.input :email, :autofocus => true ,required: "required", label: '电子邮箱' 
+            = f.input :password, required: "required", label: '密码' 
+            = f.button :submit, "登录", class: 'pull-right' 
+            p.link 
+              = link_to "忘记密码?", "#{new_user_password_path}"
+        /.proxy-login
+          a.btn href="#" 
+            i.icon-pinterest &nbsp;新浪微薄
+          a.btn href="#"
+            i.icon-sign-blank &nbsp;QQ帐号登

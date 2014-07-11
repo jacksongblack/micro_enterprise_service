@@ -1,0 +1,23 @@
+.pblock.search-enterprises.clearfix
+  .enterprises-title.bread 
+    .bread-nav
+      = simple_breadcrumbs "企业黄页",enterprises_path, "搜索：#{params[:search]}"
+      = render "search_form"
+  .wide.enterprises-content
+    - if @enterprises.blank?
+      .no_post
+        p !暂无内容.....  )::(
+    - else 
+      ul.media-list
+        - @enterprises.each_with_index do|item,index|
+          li.media
+            a.pull-left href="#{enterprise_path(item)}"
+              img.media-object  src="#{item.avatar.url}"
+            .media-body
+              h2.media-heading = item.name
+              p.gray
+                = item.description
+      .digg_pagination.clearfix
+        = will_paginate @enterprises, :container => false ,:next_label => "下一页",:previous_label => "上一页"
+  .narrow
+    = render "enterprises/slide/lastest_enterprise"

@@ -1,0 +1,242 @@
+/*system common layout css */
+
+@main-color: #005fac;  //这个是蓝色
+@max-width: 1170px;   //这个是bootstrap最大宽度
+@layout-margin-top: 50px; //这个你应该是看得懂的
+@footer-copy-right-color: #40444b;
+@footer-copy-right-font-color:#c5c7c9;
+@footer-color: #64686e;
+
+
+// 这是一些公共less 方法，方便css重用
+
+.default-layout(){
+    width: @max-width;
+    margin: 0 auto;
+} 
+
+.mes-layout(){
+    .default-layout();
+    margin-top:@layout-margin-top;
+}
+.li-active-bottom(){
+    border-style: none;
+    background-color: #fff;
+    border-bottom: 5px solid #005fac;
+}
+
+.bread-nav(){  // 面包肖导航条less function
+    .bread-nav{
+	border-bottom: 2px solid #005fac;
+	font-size: 15px;
+	color: #888;
+	span{
+	    padding: 5px;
+	    padding-left:0;
+	}
+    }
+	    }
+
+.hoting-title(){   // 站点
+    .title{
+	border-bottom: 1px solid @main-color;
+	padding-left: 0px;
+	.pull-left{
+	    padding: 1px 80px 0;
+	    background-color: red;
+	    margin: 0px 0 0 0px;
+	}
+	.pull-right{
+	    margin: -25px 14px 0 0;
+	}
+    }
+	       }
+
+.post-infor(){ // post具体相关的信息的css
+    .post-infor{
+	margin: 8px 0 0 0;
+	span{
+	    color: #aaa;
+	    float: left;
+	}
+	.jiathis_style{
+	    padding-left: 30px;
+	    float: left;
+	}
+    }
+	     }
+
+// 行业信息和新闻导航现实的页面共用布局
+.domain-and-industry-left(){
+    .nav-tabs{
+	li.more_nav{
+	    cursor: pointer;
+	    float: right;
+	}
+	.more_nav_content{
+	    display:none;
+	    position: relative;
+	    height: 0px;
+	    float: right;
+	    top: 35px;
+	    left: -2px;
+	    .nav{
+		border: 1px solid @main-color;
+		background-color: #fff;
+		i{
+		    margin: -13px 79px 0 0;
+		    color: @main-color;
+		    font-size: 20px;
+		}
+		ul{
+		    margin: 0px;
+		    li a{
+			padding: 5px 21px 5px 19px;
+			display: block;
+		    }
+
+		}
+	    }
+	}
+    }
+    .tab-content{
+	padding-left: 12px;
+	.media{
+	    border-bottom: 1px dashed #ddd;
+	    padding: 10px 0 10px 0;
+	    .media-body{
+		.media-heading{
+		    font-size: 15px;
+		    padding-right: 24px;
+		    line-height: 25px;
+		}
+		.post-infor();
+		.more{
+		    float: right;
+		    margin: -20px 45px 0 0;
+		}
+	    }
+	}
+    }
+}
+
+// 系统默认的一些布局
+
+html,body{
+    height:100%;
+}
+ul{list-style: none;}
+.navbar{
+    margin-bottom: 0px;
+    border-top: 5px solid @main-color;
+    .navbar-inner{
+	padding: 5px 25px;
+	background: #fff;
+	border-style: none;
+    }
+    form{
+	margin-right: 200px;
+    }
+    .brand{
+	padding: 3px 20px 3px;
+	font-size: 25px;
+	background: url("/assets/logo_bg.png") no-repeat;
+	background-position:125px -7px;
+	img{
+	    width: 100px;
+	    margin-right: 5px;
+	}
+    }
+    .nav-collapse{
+	.nav{
+	    margin: 18px 0px 0 4%;
+	}
+    }
+    .btn-group {
+	margin-top: 18px;
+    }
+}
+
+p.alert {
+ text-align: center;
+ margin-bottom: 0px;
+}
+
+.mes{
+    .mes-layout(); 
+    min-height:100%;
+    .container{
+	padding-bottom:150px;
+    }
+    .pheader{
+	.default-layout();  
+    }
+    .pblock{
+	.default-layout();  
+	.wide{ 
+	    float:left;
+	    width: 69%;
+	    border-right: 1px solid #eee;
+	    padding-right: 20px;
+	}
+	.narrow{
+	    float:left;
+	    width:29%;
+	}
+    }
+}
+
+
+.border-bottom-drape{
+    border-bottom: 5px solid @main-color;
+}
+.strong{
+    font-weight: bolder;
+}
+
+.blue-title{
+    .hoting-title();
+}
+.hoting-title{
+    .hoting-title();
+}
+.bread{
+    .bread-nav();
+}
+.footer{
+    position: relative;
+    margin-top: -80px; 
+    clear:both;
+    padding-top:20px;
+}
+
+.gray{
+    color:#aaa;
+}
+.red{
+    color:red;
+}
+
+// 回到顶部
+#gotop{ 
+    width:60px; 
+    height:60px;
+    position:fixed;  
+    bottom:50px;  
+    right:100px; 
+    border-radius:10px 10px 10px 10px;   
+    text-decoration:none;  
+    display:none;  
+    background-color:#999999; 
+    span{ 
+	display:block; 
+	width:60px; 
+	color:#dddddd; 
+	font-size:40px; 
+	text-align:center; 
+	margin-top:20px; 
+	&:hover{ 
+	    color:@main-color; 
+	} 
+    }
+}

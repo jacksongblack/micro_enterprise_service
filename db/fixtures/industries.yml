@@ -1,0 +1,5 @@
+<% (1..10).each do |n|%>
+<%= n%>:
+ id: <%= n%>
+ name: test_industries_<%= n%>
+<% end %>

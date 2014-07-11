@@ -1,0 +1,30 @@
+doctype 5
+html
+  head
+  title = t('system_name')
+  link rel="shortcut icon" href="/assets/favicon.ico"
+  script var duoshuoQuery = {short_name:"jacksong"};
+  script src="http://static.duoshuo.com/embed.js"
+  = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+  = javascript_include_tag "application", "data-turbolinks-track" => true
+  = csrf_meta_tags
+
+  head
+  body
+    .navbar
+      .navbar-inner
+        .container
+          a.brand href="#{root_path}"
+            img src="/assets/logo.jpg"
+            span = t('system_name')
+          = render_cell :dashboard, :nav_collapse, :controller => controller_name, :action_name => action_name
+          = render_cell :user, :nav, :session_status => user_signed_in?, :current_user => current_user
+    = render_cell :application, :notice, :notice => notice
+    = render_cell :application, :alert, :alert => alert
+    = render_cell :dashboard, :screen, :controller => controller_name, :session_status => user_signed_in?
+    .mes
+      .container
+        = yield 
+    = render  "footer/footer"
+    a#gotop href="#" title="回到顶部"
+      span ▲

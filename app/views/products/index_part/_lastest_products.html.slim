@@ -1,0 +1,22 @@
+.column.lastest_product
+  .blue-title
+    .title
+      h4 最新产品
+      span.pull-left
+      span.pull-right
+  ul.clearfix
+    - products.each do |item|
+      li.pull-left
+        .avatar
+          a href="#{product_path(item)}"
+            img src="#{item.avatar.url}"
+        h5.name.gray = item.name
+        p.attr 
+          span.red 
+            span ￥
+            span = item.price
+            span &nbsp;元
+          span.pull-right
+            span 来自：
+            span 
+              a href="#{enterprise_path(item.enterprise)}" title="#{item.enterprise.name}" = item.enterprise.name

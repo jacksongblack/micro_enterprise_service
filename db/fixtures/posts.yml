@@ -1,0 +1,21 @@
+<% (1..50).each do |n| %>
+<%= n%>:
+ id: <%= n%>
+ title: test<%= n%>
+ content: is't test<%= n%>
+ domain_id: 1
+ industry_id: 1
+ description: <%= n%>is't test<%= n%>
+ logo: /rss_assets/kaiyuanzhongguo.png
+<% end %>
+
+<% (51..100).each do |n| %>
+<%= n%>:
+ id: <%= n%>
+ title: test<%= n%>
+ content: is't test<%= n%>
+ domain_id: 2
+ description: <%= n%>is't test<%= n%>
+ industry_id: 2
+ logo: /rss_assets/kaiyuanzhongguo.png
+<% end %>

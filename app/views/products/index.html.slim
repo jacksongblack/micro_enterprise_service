@@ -1,0 +1,20 @@
+.pblock.product-index
+  .page-nav
+    = render "products/index_part/nav_left"
+    = render "products/index_part/nav_center"
+    = render "products/index_part/nav_right"
+  .field.clearfix
+    .wide
+      .blue-title
+        .title
+          h4 热卖产品
+          span.pull-left
+          span.pull-right
+            = render "products/search_form"
+      = render "products/index_part/hotting_products", :products => best_seller_products.limit(6)
+    .narrow
+      = render "products/index_part/recommend_products", :products => recommend_products(8)
+    .clearfix
+    = render "products/index_part/lastest_products", :products => latest_products.limit(8)
+  .index-ad
+    img src="/assets/ad_in_products_index.jpg"

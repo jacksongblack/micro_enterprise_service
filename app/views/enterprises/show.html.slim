@@ -1,0 +1,45 @@
+.pblock.enterprise-show
+  .wide.show-content
+    .screen
+      img src="#{@enterprise.avatar.url}"
+    .screen-shadow
+    .enterprise-infor
+      = render_cell :enterprises, :operate, :current_user => current_user, :enterprise => @enterprise
+      br
+      p.gray.clearfix
+        span.pull-left
+          span.strong 企业名称：
+          span= @enterprise.name
+      p.gray.clearfix
+        span.pull-left
+          span.strong 企业地址：
+          span = @enterprise.address
+      p.gray.clearfix
+        span.pull-right 
+          span.strong 企业电话：
+          span = @enterprise.phone
+        span.pull-left
+          span.strong 企业邮箱：
+          span = @enterprise.email
+      p.gray.clearfix
+        span.pull-right
+          span.strong 企业站点：
+          a href="#{@enterprise.url}" target="_blank" = @enterprise.url
+        span.pull-left  
+          span.strong 所属行业：
+          span = @enterprise.industry.name
+      p.gray 
+        span.strong 企业简介：
+        span = @enterprise.description
+    .live-a-message#live-a-message
+      h4.title.strong 留言板
+      .comment
+        .ds-thread data-thread-key="#{@enterprise.id}" data-title="#{@enterprise.name}" data-url="#{@enterprise.url}"
+    .ad
+      img src="/assets/ad.jpg"
+  .narrow
+    = render "enterprises/slide/switch_tab"
+    = render "enterprises/slide/lastest_enterprise"
+  script var duoshuoQuery = {short_name:"jacksong"};
+  script src="http://static.duoshuo.com/embed.js"
+  script toggleDuoshuoComments(".comment");

@@ -1,0 +1,18 @@
+table.table.table-condensed
+  tr
+    th ID序号
+    th 导航类别名称
+    th 创建时间
+    th 操作
+  - @domains.each do |item|
+    tr
+      td
+        span.badge = item.id
+      td = item.name
+      td = format_for item.created_at
+      td 
+        a title="编辑该条导航类别" data-toggle="modal" href="#edit_domain_by_id_#{item.id}"
+          i.icon-pencil &nbsp;&nbsp;
+        = render "edit", :domain => item
+        a href="javascript:void(0)" onclick="delete_item(this,'该领域下的所有新闻都会被删除')" title="删除该条行业" data-method="delete" ref="#{domain_path(item)}"
+          i.icon-remove &nbsp;&nbsp;

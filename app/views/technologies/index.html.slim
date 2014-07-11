@@ -1,0 +1,25 @@
+.pheader.technology-index-screen
+  img src="assets/technology/index_screen.gif"
+.pblock.technology-index
+  .index-title 
+    .title
+      span.pull-right
+        = render "search_form"
+  .wide
+    ul.media-list
+      - @technologies.each_with_index do|item,index|
+        li.media
+          a class="#{media_list_img_layout(index+1)}" href="#{technology_path(item)}"
+            img.media-object  src="#{item.avatar.url}"
+          .media-body
+            h2.media-heading
+              a href="#{technology_path(item)}"
+                = item.name
+            p.gray
+              = item.introduction
+        .divide-bottom
+          .divide-inner
+    .digg_pagination.clearfix
+        = will_paginate @technologies, :container => false ,:next_label => "下一页",:previous_label => "上一页"
+  .narrow
+    = render "technologies/slide/lastest_technology"

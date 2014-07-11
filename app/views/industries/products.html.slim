@@ -1,0 +1,16 @@
+.pblock.industry-products
+  .products-title.bread 
+    .bread-nav
+      = simple_breadcrumbs "产品市场",products_path, "行业产品"
+      = render "products/search_form"
+  .wide.products-content
+    .industry_nav
+      strong.pull-left 行业：
+      ul.clearfix
+        - industries.each do |item|          
+          li.pull-left class="#{item.name.eql?(@industry.name) ? 'active' : ''}"
+            a href="#{products_industry_path(item)}"  = item.name
+    .products
+      = render "products/index_part/hotting_products", :products => @products
+  .narrow
+    = render "products/index_part/recommend_products", :products => @products

@@ -1,0 +1,7 @@
+.block-body
+  .roll
+    ul
+      - now.each do |item|
+        li
+          = link_to raw("<i class='icon-volume-up'></i>"+item.title),item
+.clearfix

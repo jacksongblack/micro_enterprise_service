@@ -1,0 +1,89 @@
+@import "mes_common_style";
+
+.footer{
+    background: @footer-color;
+    border-top: 3px solid #f1f1f1;
+    .footer-block{
+	margin-top: 14px;
+	.default-layout();
+	.clear{clear:both;}
+	.site-infor{
+	    width: 230px;
+	    margin: 45px 15px 0 10px;
+	}
+	.weixin-account{
+	    float:right;
+	    img{
+		width: 140px;
+		margin: 27px 30px;
+	    }
+	    p{margin: 0 0 0 29px;color: @footer-copy-right-font-color;}
+	}
+	.links{
+	    float:left;
+	    color: @footer-copy-right-font-color;
+	    margin-bottom: 20px;
+	    h4{
+
+		font-size: 14px;
+		color: #b0b2b4;
+		margin-bottom: 8px;
+		line-height: 22px;
+		padding-left: 0;
+	    }
+	    ul{
+		margin: 0 0 0 0;
+		width: 190px;
+		list-style: none;
+		line-height: 24px;
+		float: left;
+		li{
+		    float: left;
+		    margin: 0 25px 1px 0;
+		    a{
+			padding-top: 4px;
+			margin-right: 15px;
+			color: @footer-copy-right-font-color;
+			float: left;
+			font-size: small;
+		    }
+		}
+	    }
+	}
+    }
+}
+.copy-right{
+    background:@footer-copy-right-color;
+    height: 60px;
+    .copy-block{
+	.default-layout();
+	.copy{
+	    font-size: 12px !important;
+	    font-family: Arial,Helvetica,sans-serif;
+	    color: #929396;
+	    float: left;
+	    p{padding: 9px 0 0 0;}
+	}
+	.contact{
+	    float:right;
+	    margin: 0 60px;
+	    a{
+		background: url("/assets/contact.png") no-repeat;
+		width: 22px;
+		height: 22px;
+		display: block;
+		float: left;
+		margin: 15px 0px 0 10px;
+	    }
+	    .sina:hover {
+		background-position: 0 -29px;
+	    }
+	    .tenxun {
+		background-position: -26px 0px;
+		&:hover{background-position: -26px -28px;}
+	    }
+	}
+
+    }
+}
+

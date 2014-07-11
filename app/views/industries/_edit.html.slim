@@ -1,0 +1,10 @@
+.modal.modal.hide.fade.edit_industry id="edit_industry_by_id_#{industry.id}"
+  .modal-header
+    a.close data-dismiss="modal" ×
+    h3 
+      i.icon-pencil &nbsp;&nbsp;编辑新闻导航类别
+  = simple_form_for industry , html: { class: 'form-horizontal'}  do |f|
+    .modal-body
+        = f.input :name, input_html: { maxlength: 5 }
+    .modal-footer
+      = f.button :submit, :disable_with => '更新中...' 

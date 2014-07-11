@@ -1,0 +1,27 @@
+.pblock.industry-enterprises
+  .enterprises-title 
+    .title
+      .input-prepend
+        span.add-on
+          i.icon-map-marker &nbsp;选择行业
+        = select("industry", "id", Industry.all.collect {|p| [ p.name, p.id ] }, {include_blank: '热门企业'})
+
+      span.pull_left
+      span.pull-right
+        = render "enterprises/search_form"
+  .wide.enterprises-content
+    - if @enterprises.blank?
+      .no_post
+        p !暂无内容.....  )::(
+    - else 
+      ul.media-list
+        - @enterprises.each_with_index do|item,index|
+          li.media
+            a.pull-left href="#{enterprise_path(item)}"
+              img.media-object  src="#{item.avatar.url}"
+            .media-body
+              h2.media-heading = item.name
+              p.gray
+                = item.description
+  .narrow
+    = render "enterprises/slide/lastest_enterprise"
