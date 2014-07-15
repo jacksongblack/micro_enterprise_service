@@ -15,5 +15,5 @@
       i.icon-chevron-right
     .more_industries_nav
       .nav.clearfix
-        - industries.limit(7).each do |item,index|
+        - industries.offset(7).each do |item,index|
           = link_to item.name, products_industry_path(item)
