@@ -80,12 +80,18 @@ case input
     backup = Backup.new
     backup.run
   when "2\n"
-   system "ls -l"
-   p "请输入还原包名"
-   version =  /[\w]*/.match(gets)
-   p "你输入的是#{version}"
-   restory = Restory.new version
-   restory.run
+    p "容我问您一次，是否要进行还原操作，如果还原，未备份的数据将会消失,是（y）否（n）"
+    case gets
+      when "y\n"
+        system "ls -l"
+        p "请输入还原包名"
+        version =  /[\w]*/.match(gets)
+        p "你输入的是#{version}"
+        restory = Restory.new version
+        restory.run
+      else
+       p "退出操作"
+    end
   else
     p "未知命令，程序结束"
 end
