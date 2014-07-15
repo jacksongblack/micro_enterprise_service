@@ -31,7 +31,7 @@ class Backup
   end
 
   def copy_mysql
-    system "mysqldump -uroot -pysz123 databasename > #{@current_time}/backupfile.sql"
+    system "mysqldump -uroot -pysz123 micro_enterprise_service_development > #{@current_time}/mysql/backupfile.sql"
   end
 
 end
