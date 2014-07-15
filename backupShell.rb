@@ -40,10 +40,53 @@ class Backup
    p "开始制作备份文件"
    system "tar -zcvf #{@current_time}.tar.gz #{@current_time} "
    system "rm -rf #{@current_time} "
-   p "制作配置文件完成"
+   p "制作备份文件完成"
   end
 
 end
 
-backup = Backup.new
-backup.run
+class Restory
+
+  def initialize version
+    @version = version
+  end
+
+  def run
+    unzip
+    restory_images
+    restory_mysql
+    system "rm -rf #{@version}"
+  end
+
+  def unzip
+    system "tar -zxvf #{@version}.tar.gz"
+  end
+
+  def restory_images
+    system "cp -rf  #{@version}/ckeditor_assets micro_enterprise_service/public/ckeditor_assets "
+    system "cp -rf  #{@version}/system micro_enterprise_service/public/system"
+  end
+
+  def restory_mysql
+    system "mysqldump -uroot -pysz123 micro_enterprise_service_development < #{@version}/mysql/backupfile.sql"
+  end
+
+end
+p "欢迎使用中小微备份脚本，备份请按1，还原请按2"
+input = gets
+p "你输入的是#{input}"
+case input
+  when "1\n"
+    backup = Backup.new
+    backup.run
+  when "2\n"
+   system "ls -l"
+   p "请输入还原包名"
+   version =  /[\w]*/.match(gets)
+   p "你输入的是#{version}"
+   restory = Restory.new version
+   restory.run
+  else
+    p "未知命令，程序结束"
+end
+
