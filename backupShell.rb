@@ -12,7 +12,7 @@ class Backup
     create_cache_dir
     copy_images_to_cache
     copy_mysql
-
+    to_zip
   end
   def create_cache_dir
     p "开始创建零时文件夹"
@@ -31,7 +31,16 @@ class Backup
   end
 
   def copy_mysql
+    p "开始备份数据库"
     system "mysqldump -uroot -pysz123 micro_enterprise_service_development > #{@current_time}/mysql/backupfile.sql"
+    p "备份数据库完成"
+  end
+
+  def to_zip
+   p "开始制作备份文件"
+   system "tar -zcvf #{@current_time}.tar.gz #{@current_time} "
+   system "rm -rf #{@current_time} "
+   p "制作配置文件完成"
   end
 
 end
