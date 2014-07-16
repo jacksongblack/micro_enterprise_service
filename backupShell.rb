@@ -25,22 +25,36 @@ class Backup
 
   def copy_images_to_cache
     p "开始备份图片"
-    system "cp -rf micro_enterprise_service/public/ckeditor_assets #{@current_time}/ckeditor_assets"
-    system "cp -rf micro_enterprise_service/public/system #{@current_time}/system"
-    p "图片备份完成"
+    status = system "cp -rf micro_enterprise_service/public/ckeditor_assets #{@current_time}/ckeditor_assets"
+    status = system "cp -rf micro_enterprise_service/public/system #{@current_time}/system"
+    if status
+      p "图片备份完成"
+     else
+       p "图片备份没有完成"
+     end
+
   end
 
   def copy_mysql
     p "开始备份数据库"
-    system "mysqldump -uroot -pysz123 micro_enterprise_service_development > #{@current_time}/mysql/backupfile.sql"
-    p "备份数据库完成"
+    status = system "mysqldump -uroot -pysz123 micro_enterprise_service_development > #{@current_time}/mysql/backupfile.sql"
+    if status
+      p "备份数据库完成"
+    else
+      p "数据库备份失败"
+    end
   end
 
   def to_zip
    p "开始制作备份文件"
-   system "tar -zcvf #{@current_time}.tar.gz #{@current_time} "
-   system "rm -rf #{@current_time} "
-   p "制作备份文件完成"
+   status =  system "tar -zcvf #{@current_time}.tar.gz #{@current_time} "
+   status = system "rm -rf #{@current_time} "
+   if status
+     p "制作备份文件完成"
+   else
+     p "制作备份文件没有完成"
+
+   end
   end
 
 end
